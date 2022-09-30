@@ -1,0 +1,4 @@
+tensorflow
+tfx==1.9.1
+kfp
+keras_tunes

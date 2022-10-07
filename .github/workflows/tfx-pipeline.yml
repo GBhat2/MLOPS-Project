@@ -35,7 +35,7 @@ jobs:
       run: docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/${{ env.APPLICATION_NAME }}:latest
   test_image:
     needs: [build_image]
-    runs-on:ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
     - name: Set up GCloud
       uses: GoogleCloudPlatform/github-actions/setup-gcloud@master

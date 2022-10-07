@@ -10,6 +10,7 @@ jobs:
  
     - name: Install requirements
       run: pip install -r requirements.txt
+      shell: bash
     - name: Lint code
       run: |
         flake8 --ignore=E501,E231 *.py

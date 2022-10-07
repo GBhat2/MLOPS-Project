@@ -1,15 +1,13 @@
 name: Pipeline
 
 on: [push]
-env:
-  APPLICATION_NAME: startupapp
+
 jobs:
   lint:
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v1
-    - name: Setup Python environment
-      uses: actions/setup-python@v1.1.1
+ 
     - name: Install requirements
       run: pip install   requirements.txt
     - name: Lint code

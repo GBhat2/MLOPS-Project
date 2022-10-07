@@ -14,9 +14,10 @@ jobs:
     runs-on: ubuntu-latest
   
     steps:
+    - name: 'Checkout repo'
     
     - uses: actions/setup-python@v4
-    - name: 'Checkout repo'
+   
       if: steps.training-pipeline-change.outputs.src == 'true'
       with:
         python-version: '3.8'

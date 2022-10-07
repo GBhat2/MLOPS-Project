@@ -25,10 +25,10 @@ jobs:
         #service_account_email: ${{ secrets.GCP_SERVICE_ACCT_EMAIL }}
        # service_account_key: ${{ secrets.GCP_SERVICE_ACCT_KEY }}
    # - run: |
-        gcloud config set project ${{ secrets.GCP_PROJECT_ID }}
-        gcloud config set run/region ${{ secrets.GCP_REGION }}
-        gcloud auth configure-docker
-        gcloud info
+        #gcloud config set project ${{ secrets.GCP_PROJECT_ID }}
+        #gcloud config set run/region ${{ secrets.GCP_REGION }}
+       # gcloud auth configure-docker
+        #gcloud info
     - name: Build and tag image
       run: docker build -t "gcr.io/${{ secrets.GCP_PROJECT_ID }}/${{ env.APPLICATION_NAME }}:latest" .
     - name: Push to GCP image registry

@@ -2,3 +2,10 @@ tensorflow
 tfx==1.9.1
 kfp
 keras_tuner
+Flask
+pandas
+flake8
+pip
+pylint
+pytest
+pytest-flask

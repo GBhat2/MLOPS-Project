@@ -1,6 +1,5 @@
-FROM python:3.7-slim
-
-RUN pip install -r requirements.txt
-
-ENTRYPOINT ["python"]
+FROM tensorflow/tfx:0.22.0
+WORKDIR /pipeline
+COPY ./ ./
+ENV PYTHONPATH="/pipeline:${PYTHONPATH}"
 

@@ -165,7 +165,7 @@ def run_fn(fn_args: tfx.components.FnArgs):
   model.compile(
       loss=tf.keras.losses.BinaryCrossentropy(from_logits=True),
       optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),
-      metrics=[tf.keras.metrics.BinaryAccuracy()])
+      metrics=[tf.keras.metrics.BinaryAccuracy()])  
 
   tensorboard_callback = tf.keras.callbacks.TensorBoard(
       log_dir=fn_args.model_run_dir, update_freq='batch')

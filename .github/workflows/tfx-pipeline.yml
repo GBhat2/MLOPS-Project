@@ -16,9 +16,9 @@ jobs:
     needs: lint
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v0
+    - uses: actions/checkout@v2
     - name: Set up GCloud
-      uses: GoogleCloudPlatform/github-actions/setup-gcloud@v0
+      uses: GoogleCloudPlatform/github-actions/setup-gcloud@v2
       with:
         version: '2.298.2'
         service_account_email: ${{ secrets.GCP_SERVICE_ACCT_EMAIL }}

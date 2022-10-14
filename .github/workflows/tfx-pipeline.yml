@@ -6,7 +6,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v0
+    - uses: actions/checkout@v2
  
     - name: Install requirements
       run: pip install -r requirements.txt

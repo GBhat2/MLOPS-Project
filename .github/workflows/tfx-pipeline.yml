@@ -16,23 +16,20 @@ jobs:
     needs: lint
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - name: Set up GCloud
+      - name: Show Environment'
+        uses: actions/checkout@v3
+      - name: Set up GCloud
       
-      uses: GoogleCloudPlatform/github-actions/setup-gcloud@v0
-      with:
-       
-        service_account_email: ${{ secrets.GCP_SERVICE_ACCT_EMAIL }}
-        service_account_key: ${{ secrets.GCP_SERVICE_ACCT_KEY }}
-    - run: |
-        gcloud config set project ${{ secrets.GCP_PROJECT_ID }}
-        gcloud config set run/region ${{ secrets.GCP_REGION }}
-        gcloud auth configure-docker
-        gcloud info
-    - name: Build and tag image
-      run: docker build -t "gcr.io/${{ secrets.GCP_PROJECT_ID }}/${{ env.APPLICATION_NAME }}:latest" .
-    - name: Push to GCP image registry
-      run: docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/${{ env.APPLICATION_NAME }}:latest
+        uses: GoogleCloudPlatform/github-actions/setup-gcloud@v0
+    #   
+    #- run: |
+       # gcloud config set project ${{ secrets.GCP_PROJECT_ID }}
+        # gcloud auth configure-docker
+        #gcloud info
+    #- name: Build and tag image
+     # run: docker build -t "gcr.io/${{ secrets.GCP_PROJECT_ID }}/${{ env.APPLICATION_NAME }}:latest" .
+    #- name: Push to GCP image registry
+     # run: docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/${{ env.APPLICATION_NAME }}:latest
   test_image:
     needs: [build_image]
     runs-on: ubuntu-latest

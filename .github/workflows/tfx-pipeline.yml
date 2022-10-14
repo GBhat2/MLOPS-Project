@@ -61,9 +61,9 @@ jobs:
       #  service_account_email: ${{ secrets.GCP_SERVICE_ACCT_EMAIL }}
        # service_account_key: ${{ secrets.GCP_SERVICE_ACCT_KEY }}
    # - run: |
-        gcloud config set project ${{ secrets.GCP_PROJECT_ID }}
-        gcloud config set run/region ${{ secrets.GCP_REGION }}
-        gcloud info
+       # gcloud config set project ${{ secrets.GCP_PROJECT_ID }}
+       # gcloud config set run/region ${{ secrets.GCP_REGION }}
+       # gcloud info
         
     #- name: Deploy to Cloud Run
      # run: gcloud run deploy ${{ env.APPLICATION_NAME }} --image=gcr.io/${{ secrets.GCP_PROJECT_ID }}/${{ env.APPLICATION_NAME }}:latest --platform=managed --allow-unauthenticated

@@ -2,6 +2,11 @@ name: Pipeline
 
 on: push
 
+env:
+  PROJECT_ID: ${{ secrets.GCE_PROJECT }}
+  GCE_INSTANCE: my-githubactions-vm  
+  GCE_INSTANCE_ZONE: us-central1-a
+  
 jobs:
   lint:
     runs-on: ubuntu-latest

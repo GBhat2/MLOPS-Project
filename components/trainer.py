@@ -12,10 +12,6 @@ from tfx import v1 as tfx
 from tfx_bsl.public import tfxio
 from tensorflow_transform import TFTransformOutput
 
-# Imported files such as taxi_constants are normally cached, so changes are
-# not honored after the first import.  Normally this is good for efficiency, but
-# during development when we may be iterating code it can be a problem. To
-# avoid this problem during development, reload the file.
 import taxi_constants
 import sys
 if 'google.colab' in sys.modules:  # Testing to see if we're doing development
